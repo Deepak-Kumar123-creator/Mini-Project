@@ -1,1 +1,22 @@
-
+Mini-Project/
+├── backend/
+│   ├── app.py
+│   ├── database.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── utils.py
+│   └── __init__.py
+├── ml_model/
+│   ├── dataset.csv
+│   ├── train_model.py
+│   ├── predict.py
+│   ├── model.pkl
+│   ├── label_encoder.pkl
+│   ├── multi_label_binarizer.pkl
+│   └── metadata.json
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── requirements.txt
+└── README.md
