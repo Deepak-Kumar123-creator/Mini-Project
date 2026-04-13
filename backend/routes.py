@@ -15,7 +15,6 @@ def predict_heart_disease():
             "status": "error",
             "message": "Request must be JSON. Set Content-Type: application/json"
         }), 400
-    
     data = request.get_json()
     
     if not data:
@@ -85,7 +84,6 @@ def get_all_patients():
     """
     limit  = request.args.get('limit',  50,  type=int)
     offset = request.args.get('offset', 0,   type=int)
-    
     try:
         patients = Patient.query.order_by(Patient.created_at.desc()).limit(limit).offset(offset).all()
         total    = Patient.query.count()
