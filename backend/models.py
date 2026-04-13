@@ -1,5 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
+
 from datetime import datetime, timezone
+
 db = SQLAlchemy()
 class Patient(db.Model):
     __tablename__ = 'patients'
@@ -62,6 +64,6 @@ class Patient(db.Model):
             "prediction": self.prediction,
             "risk_score": self.risk_score,
             "risk_level": self.risk_level,
-            "sex_label":        "Male" if self.sex == 1 else "Female",
+            "sex_label": "Male" if self.sex == 1 else "Female",
             "prediction_label": "Heart Disease" if self.prediction == 1 else "No Heart Disease",
         }
