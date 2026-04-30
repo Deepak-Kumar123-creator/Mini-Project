@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h1>Presentation Mode</h1>
+  <p>Model evaluation details are hidden from the user interface to keep the project focused on patient prediction and recommendations.</p>
+  <a class="btn" href="{{ url_for('main.dashboard') if current_user.is_authenticated else url_for('main.index') }}">Go Back</a>
+</section>
+{% endblock %}

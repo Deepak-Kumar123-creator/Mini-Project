@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card result">
+  <p class="tag">Prediction saved to your history</p>
+  <h1>{{ best.disease }}</h1>
+  <p class="muted">Patient: <b>{{ record.patient_name }}</b> | Age: <b>{{ record.age }}</b> | Gender: <b>{{ record.gender }}</b></p>
+
+  <div class="recommendation-box">
+    <h2>Recommended Healthcare Pathway</h2>
+    <h3>{{ best.recommendation.care_level }}</h3>
+    <p>{{ best.recommendation.summary }}</p>
+    <ul>
+      {% for action in best.recommendation.actions %}
+        <li>{{ action }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Health Improvement Advice</h3>
+    <p>{{ best.recommendation.lifestyle }}</p>
+  </div>
+
+  <div class="notice">
+    This is an educational prediction system. Please confirm any health condition with a qualified doctor.
+  </div>
+
+  <a class="btn" href="{{ url_for('main.dashboard') }}#predict">New Prediction</a>
+  <a class="btn light" href="{{ url_for('main.dashboard') }}">View History</a>
+</section>
+{% endblock %}

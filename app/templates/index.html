@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>AI-Driven Personalized Healthcare Pathway Recommendation System</h1>
+    <p>This project predicts a possible disease from selected symptoms and gives a patient-friendly healthcare recommendation pathway.</p>
+    <p class="hero-note">Login to use the disease prediction system and save your prediction history.</p>
+    <a class="btn" href="{{ url_for('main.login') }}">Login & Start Prediction</a>
+    <a class="btn light" href="{{ url_for('main.register') }}">Create Account</a>
+  </div>
+</section>
+<section class="card">
+  <h2>What this system does</h2>
+  <div class="feature-list">
+    <div><b>1. Disease Prediction</b><br>Uses symptoms selected by the patient to predict a likely disease.</div>
+    <div><b>2. Recommendation System</b><br>Provides care level, precautions, lifestyle guidance and when to consult a doctor.</div>
+    <div><b>3. Personal History</b><br>Stores prediction records separately for the logged-in user.</div>
+  </div>
+</section>
+{% endblock %}

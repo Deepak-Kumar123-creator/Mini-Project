@@ -1,0 +1,147 @@
+{
+  "metrics": {
+    "accuracy": 0.9933,
+    "precision_macro": 0.9935,
+    "recall_macro": 0.9933,
+    "f1_macro": 0.9933,
+    "cross_val_accuracy_mean": 0.9925,
+    "disease_count": 20,
+    "symptom_count": 63,
+    "dataset_rows": 5200
+  },
+  "classification_report": {
+    "Allergy": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Anemia": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Asthma": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "COVID-19": {
+      "precision": 1.0,
+      "recall": 0.9615384615384616,
+      "f1-score": 0.9803921568627451,
+      "support": 52.0
+    },
+    "Common Cold": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Dengue": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Diabetes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "GERD": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Gastroenteritis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Heart Disease": {
+      "precision": 0.9107142857142857,
+      "recall": 0.9807692307692307,
+      "f1-score": 0.9444444444444444,
+      "support": 52.0
+    },
+    "Hypertension": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Influenza": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Jaundice": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Kidney Stone": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Malaria": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Migraine": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Pneumonia": {
+      "precision": 0.96,
+      "recall": 0.9230769230769231,
+      "f1-score": 0.9411764705882353,
+      "support": 52.0
+    },
+    "Tuberculosis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Typhoid": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "Urinary Tract Infection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 52.0
+    },
+    "accuracy": 0.9932692307692308,
+    "macro avg": {
+      "precision": 0.9935357142857143,
+      "recall": 0.9932692307692308,
+      "f1-score": 0.9933006535947712,
+      "support": 1040.0
+    },
+    "weighted avg": {
+      "precision": 0.9935357142857142,
+      "recall": 0.9932692307692308,
+      "f1-score": 0.9933006535947713,
+      "support": 1040.0
+    }
+  }
+}

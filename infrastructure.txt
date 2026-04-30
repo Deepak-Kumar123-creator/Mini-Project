@@ -1,0 +1,38 @@
+AI-Driven Personalized Healthcare Pathway Recommendation System
+Infrastructure and Presentation Notes
+
+1. Application Type
+This is a Flask-based machine learning web application. It accepts patient symptoms, predicts a possible disease, saves the prediction for the logged-in user, and provides a patient-friendly healthcare recommendation pathway.
+
+2. Main Components
+- Frontend: HTML templates, CSS and JavaScript for symptom search and form submission.
+- Backend: Flask routes for login, dashboard, prediction, result and history.
+- Database: SQLite database managed through SQLAlchemy.
+- Authentication: Flask-Login with hashed passwords.
+- Machine Learning: Scikit-learn Random Forest model saved with Joblib.
+- Dataset: Multi-disease symptom dataset stored in the data folder.
+
+3. User Flow
+- User opens the application.
+- User registers or logs in.
+- After login, the dashboard shows the disease prediction form.
+- User enters patient details and selects symptoms.
+- System predicts disease and creates a recommendation pathway.
+- Prediction is saved automatically in that logged-in user's history.
+
+4. Recommendation System
+The recommendation layer gives understandable health guidance based on the predicted disease. It includes:
+- Care level
+- Disease summary
+- Recommended actions
+- Lifestyle and health improvement advice
+- Safety note to consult a qualified doctor
+
+5. Presentation Mode
+Developer-level model evaluation screens are hidden from the user interface. The project presentation focuses on patient prediction, recommendation pathway and saved history.
+
+6. Local Run URL
+http://127.0.0.1:5000
+
+7. Important Note
+This project is only for academic demonstration and early health awareness. It is not a replacement for a professional medical diagnosis.

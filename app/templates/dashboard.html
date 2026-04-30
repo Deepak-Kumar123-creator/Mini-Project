@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero compact">
+  <div>
+    <h1>Welcome, {{ current_user.name }}</h1>
+    <p>Select symptoms below to predict disease and get personalized health recommendations. Your result will be saved in your history.</p>
+  </div>
+</section>
+
+<section class="card" id="predict">
+  <h2>Disease Prediction</h2>
+  <p class="muted">Enter basic patient details and choose at least two symptoms.</p>
+  <input id="searchSymptom" placeholder="Search symptoms..." class="input">
+  <form method="post" action="{{ url_for('main.predict_route') }}">
+    <div class="grid3">
+      <input class="input" required name="patient_name" placeholder="Patient name" value="{{ current_user.name }}">
+      <input class="input" required type="number" name="age" min="1" max="120" placeholder="Age">
+      <select class="input" required name="gender">
+        <option value="">Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="symptom-grid" id="symptomGrid">
+      {% for key, label in symptoms %}
+        <label class="symptom"><input type="checkbox" name="symptoms" value="{{key}}"> {{label}}</label>
+      {% endfor %}
+    </div>
+    <button class="btn" type="submit">Predict Disease & Get Recommendation</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Your Prediction History</h2>
+  {% if records %}
+  <table>
+    <tr><th>Date</th><th>Patient</th><th>Disease</th><th>Recommendation Summary</th><th>Symptoms</th></tr>
+    {% for r in records %}
+      <tr>
+        <td>{{ r.created_at.strftime('%d-%m-%Y %H:%M') }}</td>
+        <td>{{ r.patient_name }}</td>
+        <td><b>{{ r.predicted_disease }}</b></td>
+        <td>{{ r.pathway }}</td>
+        <td>{{ r.symptoms.replace('_', ' ') }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p class="muted">No prediction history yet. Submit the form above to create your first record.</p>
+  {% endif %}
+</section>
+{% endblock %}
