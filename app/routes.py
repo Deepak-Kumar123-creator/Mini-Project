@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from flask_login import login_user, logout_user, current_user, login_required
 from app import DB, LIMITER
 from app.models import User, Prediction
-from app.ml_service import load_assets, predict
+from app.ml_service import load_symptoms, predict
 
 main = Blueprint("main", __name__)
 
@@ -16,7 +16,7 @@ def security_headers(response):
 
 
 def get_symptom_labels():
-    _, _, symptoms, _ = load_assets()
+    symptoms = load_symptoms()
     return [(s, s.replace("_", " ").title()) for s in symptoms]
 
 

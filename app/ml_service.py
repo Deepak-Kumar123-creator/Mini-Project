@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+from functools import lru_cache
 import joblib
 import pandas as pd
 
@@ -134,15 +135,23 @@ DEFAULT_RECOMMENDATION = {
 }
 
 
+@lru_cache(maxsize=1)
+def load_symptoms():
+    return joblib.load(MODEL_DIR / "symptoms.pkl")
+
+
+@lru_cache(maxsize=1)
 def load_assets():
     model = joblib.load(MODEL_DIR / "disease_model.pkl")
     encoder = joblib.load(MODEL_DIR / "label_encoder.pkl")
-    symptoms = joblib.load(MODEL_DIR / "symptoms.pkl")
+    symptoms = load_symptoms()
+
     metrics = {}
     mp = MODEL_DIR / "metrics.json"
     if mp.exists():
         with mp.open("r", encoding="utf-8") as f:
             metrics = json.load(f)
+
     return model, encoder, symptoms, metrics
 
 
